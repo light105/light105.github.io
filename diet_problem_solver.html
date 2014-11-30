@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CMSC 150 Project</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+  </head>
+  <body style="background-image: url('images/bg.jpg');background-repeat: no-repeat;background-attachment: fixed;">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+      <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+             <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+          <a class="navbar-brand" href="index.html">CMSC 150 Project</a>
+      </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><a href="ultimate_optimizer.html">Ultimate Optimizer</a></li>
+        <li><a href="diet_problem_solver.html">Diet Problem Solver</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+<!--
+User Inputs
+-List of food items chosen by the user
+
+Output
+-Number of serving per food item
+-Cost per food item
+-Total Cost of food item
+-->
+<div class="container-fluid">
+  <div class="page-header">
+    <h1 style="color: white; text-shadow: 2px 2px 8px #000000;">Diet Problem Solver</h1>
+  </div>
+  <div id="input" class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Input</h3>
+    </div>
+    <div class="panel-body">
+      <form id="foodForm" class="form-horizontal" role="form">
+        <div class="form-group">
+          <div class="col-sm-offset-9 col-sm-3 sticky">
+            <button type="button" id="select_all" class="btn btn-default btn-md">Select All</button>
+            <input type="reset" value="Reset" id="reset" class="btn btn-danger btn-md">
+            <button type="button" id="solve" class="btn btn-primary btn-md" data-toggle="modal" data-target="#outputModal">Solve</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="outputModal" tabindex="-1" role="dialog" aria-labelledby="outputModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="outputModalLabel">Procured Diet Plan</h4>
+      </div>
+      <div class="modal-body">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/diet_problem_solver.js"></script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+body {
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-index {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+
+.form-index .form-index-heading {
+  margin-bottom: 10px;
+}
+
+
+#carbonads-container {display:none} h1[id] {padding-top:0px; margin-top:20px} .zero-clipboard {display:none !important} .bs-old-docs {display:none} .bs-social {display:none} .bs-sidebar {display:none !important} .col-md-9[role=main] {width:100% !important} .navbar-fixed-top {position:absolute !important}
