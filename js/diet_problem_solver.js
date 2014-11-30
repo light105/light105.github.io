@@ -10,7 +10,7 @@ $(document).ready(function(){
               str+='<div class="row">';
           }
       }
-      str+='<div class="col-sm-4 col-md-3"><div class="checkbox"><label><input type="checkbox" class="check-form" name="food[]" value="'+i+'" hidden="hidden"/><div class="thumbnail btn btn-success"><img data-src="js/holder.js/256x256" src="'+foods[i].image+'" style="height: 256px; width:256px; display: block;"/><div class="caption" style="overflow:scroll;"><h3>'+foods[i].name+'</h3></label></div></div></div></div>';
+      str+='<div class="col-sm-4 col-md-3"><div class="checkbox"><label><input type="checkbox" class="check-form" name="food[]" value="'+i+'" hidden="hidden"/><div class="thumbnail btn btn-success"><img data-src="js/holder.js/256x256" src="'+foods[i].image+'" style="height: 256px; width:256px; display: block;"/><div class="caption" style="overflow:hidden;"><h3>'+foods[i].name+'</h3></label></div></div></div></div>';
     }
     $('#foodForm').append(str);
 
