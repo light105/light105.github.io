@@ -166,7 +166,7 @@ $(document).ready(function(){
 			var colheadings='<thead><tr>';
 
 			for(var i=0;i<newvariables.length;i++){
-				colheadings+='<th>'+variables[i]+'</th>';
+				colheadings+='<th>'+newvariables[i]+'</th>';
 			}
 			colheadings+='</tr></thead><tbody>';
 			htmlTableauBegin+=colheadings;
