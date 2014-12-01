@@ -365,7 +365,7 @@ $(function(){
 
     var windowTop = $(window).scrollTop();
 
-    if (stickyTop < windowTop && windowTop < 6000) {
+    if (stickyTop < windowTop && windowTop < 20000) {
       $('.sticky').css({ position: 'fixed', top: 25,"z-index":2});
     }
     else {
