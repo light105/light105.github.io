@@ -16,7 +16,7 @@ $(document).ready(function(){
 	});
 
 	$("#editInput").on("click",function(){
-		$("#output").slideUp(100);
+		$("#output").slideUp(1000);
 		$("#input").slideDown(1000);
 
 		$("#solution").remove();
@@ -24,13 +24,34 @@ $(document).ready(function(){
 	});
 
 	$('#solve').on("click",function(){
-		$("#editInput").prop('disabled',false);
 		var objectiveFunction=$('#objectiveFunction').val();
 		var constraints=new Array();
 		for(var i=1;i<=numConstraints;i++){
 			if($('#listOfConstraints'+i).val())
-			constraints.push($('#listOfConstraints'+i).val());
+			constraints.push($('#listOfConstraints'+i).val().replace(/\s+/g, ''));
 		}
+
+		objectiveFunction.replace(/\s+/g, '');
+		if(!objectiveFunction.match(/^[\+\-]?([0-9]+(\.[0-9]+)?)?[a-zA-Z]+[0-9]*\=([\+\-]?([0-9]+(\.[0-9]+)?)?[a-zA-Z]+[0-9]*)([\+\-]([0-9]+(\.[0-9]+)?)?[a-zA-Z]+[0-9]*)*$/)){
+			alert("Please enter a valid Objective Function.");
+			return;
+		}
+		else{
+			var valid=true;
+			for(var i=0;i<constraints.length;i++){
+				if(!constraints[i].match(/^([\+\-]?([0-9]+(\.[0-9]+)?)?[a-zA-Z]+[0-9]*)([\+\-]([0-9]+(\.[0-9]+)?)?[a-zA-Z]+[0-9]*)*[\>\<]\=[\+\-]?([0-9]+(\.[0-9]+)?)*$/)){
+					valid=false;
+					break;
+				}
+			}
+
+			if(!valid){
+				alert("Please enter a valid constraint.");
+				return;
+			}
+		}
+
+		$("#editInput").prop('disabled',false);
 		var type=$("#simplexForm input[type='radio']:checked").val();
 
 		$("#input").slideUp(500);
@@ -553,8 +574,6 @@ $(document).ready(function(){
 	});
 
 	var parseObjectiveFunction=function(str){
-		str = str.replace(/\s+/g, '');
-
 		var terms=str.match(/[\+\-]?([0-9]+(\.[0-9]+)?)?[a-zA-Z]+[0-9]*/g);
 		var objectiveVar=terms[0];
 		terms.shift();
@@ -584,7 +603,6 @@ $(document).ready(function(){
 	}
 
 	var parseConstraint=function(str,n){
-		str = str.replace(/\s+/g, '');
 		var equality=str.match(/[\>\<]\=/g)[0];
 		var a=str.split(/[\>\<]\=/);
 		var constant=parseFloat(a[1]);
