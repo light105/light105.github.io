@@ -5,7 +5,7 @@ $(document).ready(function(){
 	var numConstraints = 1;
 	$("#addConstraint").on("click",function(){
 		numConstraints++;
-		$("#constraints").append('<div class="form-group div-constraint'+numConstraints+'"><label class="col-sm-2 control-label">Constraint '+numConstraints+'</label><div class="col-sm-10"><input type="text" class="form-control" id="listOfConstraints'+numConstraints+'" placeholder="Constraint"></div></div>');
+		$("#constraints").append('<div class="form-group div-constraint'+numConstraints+'"><label class="col-sm-2 control-label">Constraint '+numConstraints+'</label><div class="col-sm-10"><input type="text" class="form-control" id="listOfConstraints'+numConstraints+'" placeholder="a(var1) + b(var2) + ... <=/>= constant"></div></div>');
 	});
 
 	$("#removeConstraint").on("click",function(){
@@ -335,9 +335,16 @@ $(document).ready(function(){
 		for(var i=0;i<objectiveFunction.variables.length-1;i++){
 			variables.push(objectiveFunction.variables[i]);
 		}
-		for(var i=1;i<constraints.length+1;i++){
-			variables.push("S"+i);
+		for(var i=0;i<constraints.length;i++){
+			for(var j=0;j<constraints[i].variables.length;j++){
+				if(variables.indexOf(constraints[i].variables[j])==-1){
+					variables.push(constraints[i].variables[j]);
+				}
+			}
 		}
+		// for(var i=1;i<constraints.length+1;i++){
+		// 	variables.push("S"+i);
+		// }
 		variables.push(objectiveFunction.variables[objectiveFunction.variables.length-1]);
 		variables.push("");
 
