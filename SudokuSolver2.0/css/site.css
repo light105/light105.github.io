@@ -1,0 +1,108 @@
+.top-border {
+    border-top:thin solid;
+    border-color:black;
+}
+
+.bottom-border {
+    border-bottom:thin solid;
+    border-color:black;
+}
+
+.left-border {
+    border-left:thin solid;
+    border-color:black;
+}
+
+.right-border {
+    border-right:thin solid;
+    border-color:black;
+}
+
+h1 {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.sudoku-menu {
+	width: 50%;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+.sudoku-container {
+	border: 5px solid #000000;
+	margin-left: auto;
+	margin-right: auto;
+	width: 426px !important;
+	height: 426px !important;
+}
+
+#container table {
+	width: 426px !important;
+	height: 426px !important;
+}
+
+
+.sudoku-container td {
+	margin: 0;
+	padding: 5px !important;
+}
+
+
+.sudoku-section-one {
+	background: #C8FFE8;
+}
+
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+      
+
+.row{
+	width: 100%;
+}
+
+#fileread{
+	margin-left: 38%;	
+}
+
+
+
+/* PLAY TABLE */
+#play_table tr *{
+	width:50px !important;
+	height:50px !important;
+	padding: 5px;
+}
+
+#play_table{
+	width: 0;
+}
+
+input.inputer{
+	background-color: rgba(255,255,255,0.4);
+	border: none;
+	border: 1px solid black;
+	text-align: center;
+	font-size: 20px;
+}
+
+td.wronged[disabled] input{
+	background-color: rgba(250, 150, 150, 0.8);
+}
+
+input[disabled]{
+	background-color: rgba(0,0,0,0);
+	border: none;
+	text-align: center;
+	font-size: 20px;
+}

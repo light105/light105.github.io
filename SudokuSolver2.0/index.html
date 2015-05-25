@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sudoku Solver</title>
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<link type="text/css" rel="stylesheet" href="css/site.css" media="screen,projection"/>
+</head>
+<body >
+	<div id="input" value="" ></div>
+	<main>
+		 <div class="slider fullscreen" hidden>
+		    <ul class="slides">
+		      <li>
+		        <img src="img/1.jpg"> <!-- random image -->
+		        <div class="caption center-align">
+		          <h3 class="" style="text-shadow: 2px 2px 8px #000000;">Kim Joshua Advincula</h3>
+		        </div>
+		      </li>
+		      <li>
+		        <img src="img/2.jpg"> <!-- random image -->
+		        <div class="caption left-align">
+		          <h3 class="" style="text-shadow: 2px 2px 8px #000000;">Desery Sabado</h3>
+		        </div>
+		      </li>
+		      <li>
+		        <img src="img/3.jpg"> <!-- random image -->
+		        <div class="caption right-align">
+		          <h3 class="" style="text-shadow: 2px 2px 8px #000000;">John Viscel Sangkal</h3>
+		        </div>
+		      </li>
+		      
+		    </ul>
+		  </div>
+		<div class="container">
+			<h1 class="teal-text" style="text-shadow: 2px 2px 8px #999999;" onclick="$('.slider').fadeIn()" >Sudoku XY</h1>
+		</div>
+		<!-- Modal Structure -->
+		  <div id="modal1" class="modal">
+		    <div class="modal-content">
+		      <h4>Instructions</h4>
+		      <p>A bunch of text</p>
+		    </div>
+		    <div class="modal-footer">
+		      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+		    </div>
+		  </div>
+
+
+
+
+
+
+
+
+  		  <ul id="slide-out" class="side-nav fixed" hidden>
+		    
+		  </ul>
+		
+
+		<div class="container">
+			<div id="playable_container">
+				<center>
+					<table id="play_table"></table>
+				</center>
+			</div>
+		</div>
+
+		<div class="container">
+
+			<div class="row">
+				<div id="fileread" class="file-field input-field">
+			      <div class="btn">
+				      <span>File</span>
+					  <input type="file" name="file" id="file" onchange="readFile(this)"/>
+				  </div>
+			    </div>
+			</div>
+
+			<form>
+				<center>
+				<br/><br/>
+<!-- 			    <div class="row">
+			        <div class="input-field col s12">
+			          <textarea id="input" onfocus="removeFile()" class="materialize-textarea"></textarea>
+			          <label for="input">Input</label>
+			        </div>
+			      </div>
+ -->			  
+	 				  <button class="btn waves-effect waves-light" id="solve" type="button" name="action">Play
+					    <i class="mdi-content-send right"></i>
+					  </button>
+	 				  <button class="btn waves-effect waves-light" hidden id="check" type="button" name="action">Check
+					    <i class="mdi-content-send right"></i>
+					  </button>
+	 				  <button class="btn waves-effect waves-light" hidden id="show_sol" type="button" name="action">Solutions
+					    <i class="mdi-content-send right"></i>
+					  </button>
+				  </center>
+
+			</form>
+			<div id="solutions">
+			</div>
+		</div>
+		<!-- Modal Structure -->
+		  <div id="modal1" class="modal">
+		    <div class="modal-content">
+		      <h4>Instructions</h4>
+		      <p>A bunch of text</p>
+		    </div>
+		    <div class="modal-footer">
+		      <a href="#!" class=" modal-action modal-close waves-effect waves-green btn-flat">Close</a>
+		    </div>
+		  </div>
+	</main>
+	
+
+
+
+
+
+	<audio id='roar' controls hidden='hidden' loop autoplay>
+		  <source src="audio/bg.mp3" type="audio/mpeg">
+		</audio>
+	<script type="text/javascript" src="js/jquery-2.1.3.min.js"></script>
+	<script type="text/javascript" src="js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/sudoku.js"></script>
+	<script type="text/javascript" src="js/site.js"></script>
+
+
+
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+      $('.slider').slider({full_width: true});
+      $('.slider').on("click",function(){
+      	$('.slider').fadeOut();
+      });
+    });
+    </script>
+	
+</body>
+</html>
